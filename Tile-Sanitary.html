@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An e-commerce tool for Tiles, Sanitary, and Designer Wash Basins. Customize and select items for your business needs.">
+    <meta name="keywords" content="e-commerce tool, tiles, sanitary, wash basins, business tools">
+    <meta name="author" content="Your Name">
+    <title>Tile & Sanitary Tool - Your Business Solution</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #000000; /* Black */
+            --secondary-color: #ffffff; /* White */
+            --background-color: #ffffff; /* White */
+            --text-color: #000000; /* Black */
+            --glass-background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            --glass-border: rgba(0, 0, 0, 0.1); /* Light border */
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--glass-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        header nav a {
+            margin-left: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: opacity 0.3s ease;
+        }
+
+        header nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Product Selection Section */
+        .product-selection {
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+            margin-bottom: 2rem;
+        }
+
+        .product-selection h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .product-selection label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
+            color: var(--primary-color);
+        }
+
+        .product-selection select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-background);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-selection button {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .product-selection button:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Product Display Section */
+        .product-display {
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        .product-display h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .product-display .product-card {
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        .product-display .product-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .product-display .product-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: var(--primary-color);
+        }
+
+        .product-display .product-card a {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .product-display .product-card a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Ad Section */
+        #ad-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #ad-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            color: var(--primary-color);
+        }
+
+        .ad-container {
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--glass-background);
+            backdrop-filter: blur(10px);
+            margin-top: 4rem;
+            box-shadow: var(--glass-shadow);
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.9;
+            color: var(--primary-color);
+        }
+    </style>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_AD_UNIT_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Tile & Sanitary Tool</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Product Selection Section -->
+        <section class="product-selection">
+            <h2>Select Your Product</h2>
+            <label for="product-type">Product Type:</label>
+            <select id="product-type">
+                <option value="tiles">Tiles</option>
+                <option value="sanitary">Sanitary</option>
+                <option value="wash-basin">Designer Wash Basin</option>
+            </select>
+            <button id="apply-product">Apply</button>
+        </section>
+
+        <!-- Product Display Section -->
+        <section class="product-display">
+            <h2>Product Details</h2>
+            <div id="product-list">
+                <!-- Product details will be dynamically populated here -->
+            </div>
+        </section>
+
+        <!-- Ad Section -->
+        <section id="ad-section">
+            <h3>Advertisement</h3>
+            <div class="ad-container">
+                <!-- AdSense Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="YOUR_ADSENSE_AD_UNIT_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Tile & Sanitary Tool. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for Dynamic Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const productType = document.getElementById('product-type');
+            const applyProductBtn = document.getElementById('apply-product');
+            const productList = document.getElementById('product-list');
+
+            // Sample Product Data
+            const products = {
+                tiles: [
+                    {
+                        name: "Ceramic Tiles",
+                        description: "High-quality ceramic tiles for floors and walls.",
+                        link: "#"
+                    },
+                    {
+                        name: "Porcelain Tiles",
+                        description: "Durable porcelain tiles for heavy-duty use.",
+                        link: "#"
+                    }
+                ],
+                sanitary: [
+                    {
+                        name: "Toilet Commode",
+                        description: "Modern and stylish toilet commode.",
+                        link: "#"
+                    },
+                    {
+                        name: "Wash Basin",
+                        description: "Elegant wash basin for bathrooms.",
+                        link: "#"
+                    }
+                ],
+                "wash-basin": [
+                    {
+                        name: "Designer Wash Basin",
+                        description: "Luxurious designer wash basin for modern bathrooms.",
+                        link: "#"
+                    },
+                    {
+                        name: "Wall-Mounted Basin",
+                        description: "Space-saving wall-mounted wash basin.",
+                        link: "#"
+                    }
+                ]
+            };
+
+            // Apply Product Selection
+            applyProductBtn.addEventListener('click', () => {
+                const type = productType.value;
+                const productData = products[type];
+
+                // Clear Previous Products
+                productList.innerHTML = '';
+
+                // Populate Product Details
+                productData.forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <a href="${product.link}" target="_blank">View Product</a>
+                    `;
+                    productList.appendChild(card);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
