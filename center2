@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Education Tool</h2>
+    <label for="classLevel">Select Class Level:</label>
+    <select id="classLevel">
+        <option value="Nursery">Nursery</option>
+        <option value="Primary">Primary</option>
+        <option value="Secondary">Secondary</option>
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Masters">Masters</option>
+        <option value="PhD">PhD</option>
+    </select>
+    
+    <label for="book">Select Book:</label>
+    <select id="book">
+        <option value="Math">Mathematics</option>
+        <option value="Science">Science</option>
+        <option value="History">History</option>
+        <option value="Literature">Literature</option>
+    </select>
+    
+    <label for="subject">Select Subject:</label>
+    <select id="subject">
+        <option value="Basic">Basic</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+    </select>
+    
+    <button onclick="generateContent()">Show Details</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        function generateContent() {
+            const classLevel = document.getElementById('classLevel').value;
+            const book = document.getElementById('book').value;
+            const subject = document.getElementById('subject').value;
+            
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerHTML = `<strong>Class Level:</strong> ${classLevel}<br>
+                                                          <strong>Book:</strong> ${book}<br>
+                                                          <strong>Subject Level:</strong> ${subject}`;
+        }
+    </script>
+</body>
+</html>
